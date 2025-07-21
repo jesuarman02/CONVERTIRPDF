@@ -1,0 +1,51 @@
+# 🐍 Entorno virtual de Python
+.venv/
+env/
+venv/
+
+# ⚙️ Cachés y compilaciones de Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# 🗄️ Base de datos SQLite (para evitar subir datos locales)
+db.sqlite3
+
+# 🔑 Variables de entorno (seguridad)
+.env
+
+# 🧪 Archivos de pruebas y coberturas
+.coverage
+htmlcov/
+
+# 🧠 Modelos, cache, IA local (opcional)
+*.pth
+*.onnx
+ollama_model_cache/
+
+# 📂 Archivos temporales o logs
+*.log
+*.tmp
+*.bak
+*.swp
+
+# 🧪 Archivos de pruebas y migraciones innecesarias
+*.sqlite3
+*.DS_Store
+
+# 🔧 Archivos del IDE o editor
+.vscode/
+.idea/
+
+# 🖼️ Archivos de subida de usuario
+/media/*
+!media/.gitkeep  # <- para que la carpeta media exista pero vacía
+
+# 📦 Archivos compilados y binarios
+*.exe
+*.dll
+*.so
+*.dylib
+
+# 📄 Archivos Word generados (opcional, si se generan en media/)
+*.docx

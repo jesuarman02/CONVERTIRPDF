@@ -1,0 +1,106 @@
+{% extends 'base.html' %} {% load static %} {% block title %}Subir PDF y Generar
+Word{% endblock %} {% block content %}
+<h2 class="text-center mb-4">Conversión de Archivos PDF a Word</h2>
+
+<div class="container">
+  <form
+    action="{% url 'convertir_pdf_simple' %}"
+    method="post"
+    enctype="multipart/form-data"
+  >
+    {% csrf_token %}
+
+    <div class="card p-4 mb-4">
+      <div class="row gx-3 gy-3">
+        <div class="col-md-6">
+          <h5 class="mb-3">1️⃣ Carga tu archivo</h5>
+          <div class="input-group mb-3">
+            <input
+              type="file"
+              class="custom-file-input"
+              id="pdf-upload"
+              name="pdf"
+              accept=".pdf"
+            />
+            <small id="file-name" class="form-text text-muted"></small>
+          </div>
+          <button
+            id="btn-eliminar"
+            type="button"
+            class="btn btn-guardar-opcion w-100 d-none"
+          >
+            Eliminar archivo
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="card p-4 mb-4">
+      <div class="row gx-3 gy-3">
+        <div class="col-md-12">
+          <h5 class="mb-3">2️⃣ ¿Qué tipo de archivo PDF estás cargando?</h5>
+          <p class="text-muted">
+            Para asegurar la correcta clasificación de su documento PDF,
+            seleccione la opción que mejor describa su archivo.
+          </p>
+
+          <select class="form-select mb-3" id="tipo-pdf">
+            <option value="0">Seleccione una opción</option>
+            <option value="escaneado">Escaneado (imagen)</option>
+            <option value="digital">Digital (texto seleccionable)</option>
+            <option value="imagenes">PDF con imágenes</option>
+          </select>
+          <input type="hidden" id="tipo_pdf_hidden" name="tipo_pdf" />
+
+          <div id="descripcion-tipo-pdf" class="alert alert-info d-none"></div>
+
+          <button
+            id="btn-guardar-tipo"
+            type="button"
+            class="btn btn-guardar-opcion w-100 d-none"
+          >
+            Guardar tipo de archivo
+          </button>
+
+          <button
+            id="btn-limpiar-tipo"
+            type="button"
+            class="btn btn-reinicio mt-2 w-100 d-none"
+          >
+            Eliminar selección de tipo de archivo
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="card p-4 mb-4" id="generar-card">
+      <button
+        type="submit"
+        id="btn-generar-word"
+        class="btn btn-generar-word w-100"
+      >
+        <i class="bi bi-file-earmark-text-fill"></i>
+        Generar archivo Word
+      </button>
+    </div>
+  </form>
+
+  <div class="card p-4 mb-4 d-none" id="descargas-card">
+    <h5 class="mb-3">Descargas</h5>
+
+    <button id="btn-descargar-simple" class="btn btn-descargar mb-2 w-100">
+      <i class="bi bi-file-earmark-word-fill"></i>
+      Descargar Word
+    </button>
+    <button id="btn-reiniciar" class="btn btn-reinicio mt-3 w-100">
+      <i class="bi bi-arrow-repeat"></i>
+      Convertir otro archivo
+    </button>
+
+    <button id="btn-inicio" class="btn btn-backhome mt-2 w-100">
+      <i class="bi bi-house-door-fill"></i>
+      Volver al inicio
+    </button>
+  </div>
+</div>
+
+<script src="{% static 'js/simple.js' %}"></script>
+{% endblock %}

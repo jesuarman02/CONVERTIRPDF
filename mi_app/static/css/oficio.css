@@ -1,0 +1,133 @@
+.card {
+  border: 2px solid #161a1db8;
+}
+
+.col-md-6 {
+  /* border: 2px solid #161a1d; */
+  background-color: #fff;
+  padding: 1%;
+}
+.col-md-6 input.form-control {
+  border: 2px solid #a57f2c;
+}
+
+.custom-file-input::file-selector-button {
+  color: #fff !important;
+  background-color: #a57f2c !important;
+  border: none !important;
+  border-radius: 7%;
+  padding: 0.5rem 1rem !important;
+  cursor: pointer;
+}
+
+.custom-file-input:hover::file-selector-button {
+  background-color: #9b2247 !important;
+}
+
+.custom-input-group-text {
+  color: #fff !important;
+  background-color: #a57f2c !important;
+}
+
+.btn-cargar,
+.btn-guardar-credenciales {
+  background-color: #1e5b4f !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+.btn-cargar:hover,
+.btn-guardar-credenciales:hover {
+  background-color: #18483f !important;
+}
+#btn-guardar-opcion {
+  background-color: #9b2247;
+  color: #ffffff;
+  border: none;
+}
+#btn-guardar-opcion:hover {
+  background-color: #65162e;
+}
+.btn-eliminar{
+  background-color: #9b2247;
+  color: #ffffff;
+  border: none;
+  width: 100%;
+}
+.btn-eliminar:hover{
+  background-color: #65162e;
+  color: #ffffff;
+}
+.btn-guardar-opcion {
+  background-color: #9b2247;
+  color: #ffffff;
+  border: none;
+}
+.btn-guardar-opcion:hover {
+  background-color: #65162e;
+  color: white;
+}
+.input-group-text {
+  background-color: #a57f2c !important;
+  color: #fff !important;
+  border: none !important;
+}
+.btn-generar-word {
+  background-color: #161a1d !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+.btn-generar-word:hover {
+  background-color: #090909 !important;
+}
+/* Estilo para botón Descargar Word */
+.btn-descargar {
+  background-color: #161a1d;
+  color: #ffffff;
+  border: none;
+  width: 100%;
+}
+.btn-descargar:hover {
+  background-color: #0f1214; /* un tono más oscuro */
+  color: #ffffff;
+}
+
+/* Estilo para botón Descargar TXT */
+.btn-txt {
+  background-color: #98989A;
+  color: #ffffff;
+  border: none;
+  width: 100%;
+}
+.btn-txt:hover {
+  background-color: #7c7c7f; /* ligeramente más oscuro */
+  color: #ffffff;
+}
+
+/* Estilo para botón Convertir otro archivo */
+.btn-reinicio {
+  background-color: #a57f2c;
+  color: #ffffff;
+  border: none;
+  width: 100%;
+}
+.btn-reinicio:hover {
+  background-color: #896926;
+  color: #ffffff;
+}
+
+/* Estilo para botón Volver al inicio */
+.btn-backhome {
+  background-color: #9b2247;
+  color: #ffffff;
+  border: none;
+  width: 100%;
+}
+.btn-backhome:hover {
+  background-color: #9b2247;
+  color: #ffffff;
+}
+.hidden {
+  display: none;
+}

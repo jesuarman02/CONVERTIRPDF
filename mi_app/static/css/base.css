@@ -1,0 +1,197 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: "Noto Sans", Arial, sans-serif;
+  background-color: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+}
+main {
+  flex-grow: 1;
+}
+
+
+.custom-block {
+  font-family: "Noto Sans", Arial, sans-serif;
+}
+
+.left-col,
+.right-col {
+  padding: 20px;
+}
+
+.seccion-titulo,
+.seccion-texto {
+  transition: transform 0.3s ease;
+}
+
+.seccion-titulo:hover,
+.seccion-texto:hover {
+  transform: scale(1.05);
+}
+
+.logo-central {
+  width: 100px;
+  height: auto;
+  animation: rotateLogo 6s linear infinite;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+@keyframes rotateLogo {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.btn-oficios {
+  background-color: #9b2257;
+  color: white;
+}
+
+.btn-oficios:hover {
+  background-color: #002f2a;
+  color: white;
+}
+
+.btn-convertidor {
+  background-color: #1e5b4f;
+  color: white;
+}
+
+.btn-convertidor:hover {
+  background-color: #611232;
+  color: white;
+}
+
+.footer-navbar {
+  background: #e6d194;
+  padding: 10px 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 100px;
+}
+
+.footer-logo {
+  width: 13rem;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.footer-logo:hover {
+  transform: scale(1.08);
+}
+
+header {
+  background-color: rgb(166, 128, 45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 20px;
+  flex-wrap: wrap;
+  position: relative;
+  gap: 20px;
+}
+
+.logo-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+header img {
+  object-fit: contain;
+  max-width: 100%;
+  height: auto;
+}
+
+.logo-transdig {
+  position: absolute;
+  width: 20rem;
+  left: 1%;
+  top: 20px;
+  z-index: 1;
+}
+
+.logo-infotec {
+  position: absolute;
+  width: 14rem;
+  right: 2%;
+  top: 0px;
+}
+
+.navbar-title {
+  width: 100%;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+  margin: 10px 0;
+}
+
+
+.volver-inicio a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  position: absolute;
+  left: 2%;
+  top: 80%;
+}
+
+.volver-inicio a:hover {
+  text-decoration: underline;
+}
+
+
+@media screen and (max-width: 768px) {
+  .logo-transdig {
+    position: relative;
+    width: 10rem;
+    left: 0;
+    top: 0;
+    margin-bottom: 10px;
+    display: block;
+    z-index: initial;
+  }
+
+  .logo-infotec {
+    position: relative;
+    width: 10rem;
+    right: 0;
+    top: 0;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .navbar-title {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .footer-logo {
+    width: 9rem;
+    margin: 8px;
+  }
+
+  .footer-navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

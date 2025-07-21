@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Lector PDF a Word{% endblock %}
+
+{% block content %}
+<h2 class="text-center mb-4">Conversión de Oficios de Transparencia a Word</h2>
+
+<div class="container">
+
+  <div class="card p-4 mb-4">
+    <div class="row gx-3 gy-3">
+      <div class="col-md-6">
+        <h5 class="mb-3">1️⃣Carga tu archivo</h5>
+        <div class="input-group mb-3">
+          <input type="file" class="custom-file-input" id="pdf-upload" accept=".pdf">
+          <small id="file-name" class="form-text text-muted"></small>
+        </div>
+        <button id="btn-eliminar" class="btn btn-guardar-opcion w-100">Eliminar archivo</button>
+      </div>
+
+      <div class="col-md-6">
+        <h5 class="mb-3">2️⃣Credenciales</h5>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Ingresa el nombre: LIC. KAREN HORTENSIA " id="input-nombre">
+           <button class="btn btn-warning" id="btn-editar-nombre" style="border-radius: 25%;position: relative;left: 2%;">
+      <i class="bi bi-pencil"></i>
+    </button>
+    <button class="btn btn-danger" id="btn-eliminar-nombre" style="border-radius: 25%; position: relative;left: 4%;">
+      <i class="bi bi-trash"></i>
+    </button>
+        </div>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Ingresa su cargo: TITULAR DE LA UNIDAD DE TRANSPARENCIA" id="input-cargo">
+          <button class="btn btn-warning" id="btn-editar-cargo" style="border-radius: 25%;position: relative;left: 2%;">
+      <i class="bi bi-pencil"></i>
+    </button>
+    <br> 
+    <button class="btn btn-danger" id="btn-eliminar-cargo" style="border-radius: 25%;position: relative;left: 4%;">
+      <i class="bi bi-trash"></i>
+    </button>
+        </div>
+        <button id="btn-guardar-credenciales" class="btn btn-guardar-credenciales w-100">Guardar</button>
+      </div>
+    </div>
+  </div>
+
+
+<div class="card p-4 mb-4">
+  <div class="row gx-3 gy-3">
+    <div class="col-md-6">
+      <h5 class="mb-3">3️⃣Cuerpo de Respuesta a preguntas</h5>
+      <div id="opcion-elegida" class="alert alert-info">
+           A este respecto, después de realizada una búsqueda exhaustiva y razonable en los archivos físicos y electrónicos que obran en la Dirección Adjunta de Innovación y Conocimiento, así como de la consulta al personal adscrito a la misma, se informa lo siguiente:
+      </div>
+      <input type="hidden" name="cuerpo_respuesta" id="cuerpo_respuesta_hidden">
+      <button type="button" class="btn btn-cargar w-100" id="btn-abrir-modal" data-bs-toggle="modal" data-bs-target="#modalSeleccion">
+        Seleccionar opción
+      </button>
+      <button id="btn-eliminar-seleccion" class="btn btn-eliminar hidden">
+  Eliminar selección
+</button>
+
+    </div>
+
+    <div class="col-md-6">
+      <h5 class="mb-3">4️⃣Agregar nombre con copia para:</h5>
+      <ul class="list-group mb-3">
+        <li class="list-group-item">Mtra. Analy Mendoza Rosales - Encargada de la Gerencia de Capital Humano</li>
+        <li class="list-group-item">Mtro. Felipe Alfonso Delgado Castillo - Encargado de la Dirección Adjunta de Innovación y Conocimiento</li>
+      </ul>
+      <div class="input-group mb-3">
+        <div class="input-group-text">
+          <input class="form-check-input mt-0" type="checkbox" id="copy-checkbox">
+        </div>
+        <input type="text" class="form-control" id="copy-input" placeholder="Escriba otro nombre">
+        <input type="hidden" name="ccp_adicional" id="ccp_adicional_hidden">
+      </div>
+      <button id="guardar-copy" class="btn btn-guardar-opcion w-100 hidden">Guardar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Generar archivo Word -->
+<div class="card p-4 mb-4" id="generar-card">
+  <button id="btn-generar-word" class="btn btn-generar-word w-100">
+    <i class="bi bi-file-earmark-text-fill"></i> Generar archivo Word
+  </button>
+</div>
+
+<!-- Descargas -->
+<div class="card p-4 mb-4 hidden" id="descargas-card">
+  <h5 class="mb-3">Descargas</h5>
+  <button id="btn-descargar" class="btn btn-descargar mb-2 w-100">Descargar Word</button>
+  <button id="btn-descargar-txt" class="btn btn-txt mb-2 w-100">Descargar TXT</button>
+
+  <!-- 🔁 Botones extra -->
+  <button id="btn-reiniciar" class="btn btn-reinicio mt-3 w-100">Convertir otro archivo de oficios</button>
+  <button id="btn-inicio" class="btn btn-backhome mt-2 w-100">Volver al inicio</button>
+</div>
+
+
+
+<div class="modal fade" id="modalSeleccion" tabindex="-1" aria-labelledby="modalSeleccionLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalSeleccionLabel">Selecciona una opción</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <label class="form-label">Selecciona una opción:</label>
+        <select class="form-select mb-3" id="select-opciones">
+          <option value="1">Resultado de Búsqueda</option>
+          <option value="2">Comunicación de Búsqueda</option>
+          <option value="otro">Otra opción</option>
+        </select>
+        <div id="input-otro-group" class="mb-3 hidden">
+          <label class="form-label">Escriba su opción:</label>
+          <textarea class="form-control" id="input-otro" placeholder="Ingrese su opción aquí" rows="4"></textarea>
+        </div>
+        <div id="opcion-elegida-modal" class="alert alert-info"></div>
+      </div>
+      <div class="modal-footer">
+        <button id="btn-guardar-modal" type="button" class="btn btn-cargar w-100" data-bs-dismiss="modal">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="{% static 'js/index.js' %}"></script>
+{% endblock %}
+
+</body>
+</html>

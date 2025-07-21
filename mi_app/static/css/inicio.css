@@ -1,0 +1,62 @@
+.custom-block {
+  font-family: 'Noto Sans', Arial, sans-serif;
+}
+
+.seccion-titulo,
+.seccion-texto {
+  transition: transform 0.3s ease;
+}
+
+/* Hover: agrandar texto suavemente */
+.seccion-titulo:hover,
+.seccion-texto:hover {
+  transform: scale(1.05);
+}
+
+/* Estilos para el logo central */
+.logo-central {
+  width: 14rem;
+  height: auto;
+  animation: rotateLogo 6s linear infinite;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+/* Botón de Oficios de Transparencia (izquierdo) */
+.btn-oficios {
+  background-color: #9b2257;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.btn-oficios:hover {
+  background-color: #002f2a;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Botón de Convertidor PDF a Word (derecho) */
+.btn-convertidor {
+  background-color: #1e5b4f;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.btn-convertidor:hover {
+  background-color: #611232;
+  color: white;
+  transform: scale(1.05);
+}
+/* Animación estilo 3D */
+@keyframes rotateLogo {
+  0%   { transform: rotateY(0deg); }
+  100% { transform: rotateY(360deg); }
+}
+
+/* Ajuste para separación lateral */
+@media (min-width: 768px) {
+  .left-col,
+  .right-col {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

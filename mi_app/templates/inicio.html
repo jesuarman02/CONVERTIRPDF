@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Inicio - Oficina Generativa{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+  <div class="row justify-content-between align-items-center text-center">
+
+    <div class="col-lg-4 col-md-5 left-col custom-block">
+      <h2 class="seccion-titulo">Oficios de Transparencia</h2>
+      <p class="seccion-texto">
+        Aquí puedes transformar documentos PDF de transparencia en archivos Word editables.
+        Esto facilita la manipulación y el uso de la información pública para tus necesidades.
+      </p>
+      <a href="{% url 'index' %}" class="btn btn-lg btn-oficios">
+        Convertir <i class="fas fa-arrow-right ms-2"></i>
+      </a>
+    </div>
+
+    <div class="col-lg-2 col-md-2 d-flex justify-content-center">
+      <img src="{% static 'img/loga.png' %}" alt="Logo Central" class="logo-central">
+    </div>
+
+    <div class="col-lg-4 col-md-5 right-col custom-block">
+      <h2 class="seccion-titulo">Convertidor PDF a Word</h2>
+      <p class="seccion-texto">
+        Esta función te permite transformar cualquier PDF en un documento Word editable,
+        facilitando la manipulación de su texto.
+      </p>
+      <a href="{% url 'convertir' %}" class="btn btn-lg btn-convertidor">
+        Convertir <i class="fas fa-arrow-right ms-2"></i>
+      </a>
+    </div>
+
+  </div>
+</div>
+{% endblock %}
