@@ -10,7 +10,7 @@ Este proyecto fue desarrollado especialmente para el área de **Transparencia de
 - 🟢 Conversión de documentos del área de Transparencia INFOTEC a Word con formato específico.
 - 🟡 Conversión de cualquier PDF (escaneado, digital o con imágenes) a texto limpio editable.
 - 🔍 OCR con Tesseract para extraer texto de documentos escaneados.
-- 🧠 Limpieza y corrección inteligente con IA usando modelos LLaMA (vía Ollama).
+- 🧠 Limpieza y corrección inteligente con IA usando modelos LLaMA.
 - 📄 Exportación de textos procesados a archivos Word `.docx` con estructura adecuada.
 - 💻 Interfaz web intuitiva con alertas modernas.
 - ✅ Validaciones dinámicas y control total del flujo por parte del usuario.
@@ -32,8 +32,8 @@ Transforma PDFs escaneados o digitales en texto editable, con limpieza opcional 
 - Django
 - python-dotenv (variables de entorno)
 - Tesseract OCR (reconocimiento óptico de texto)
-- Ollama + LLaMA (IA local para limpieza semántica)
-- Cliente OpenAI (usado con Together.xyz como alternativa de IA remota)
+- LLaMA (IA para limpieza semántica)
+- Cliente OpenAI (usado con Together.xyz como IA)
 - Poppler con pdf2image (conversión de PDF a imagen)
 - PyMuPDF (fitz) (extracción y manipulación directa de PDFs)
 - python-docx (generación de archivos .docx con estilos)

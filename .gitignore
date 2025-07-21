@@ -39,7 +39,7 @@ ollama_model_cache/
 
 # 🖼️ Archivos de subida de usuario
 /media/*
-!media/.gitkeep  # <- para que la carpeta media exista pero vacía
+!media/.gitkeep  
 
 # 📦 Archivos compilados y binarios
 *.exe
