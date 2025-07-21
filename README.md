@@ -115,7 +115,7 @@ BASE_URL=https://api.together.xyz/v1
 1. **Clona o descomprime el proyecto**:
 
 ```bash
-git clone https://github.com/tu_usuario/CONVERTIRPDF.git
+git clone https://github.com/jesuarman02/CONVERTIRPDF.git
 cd CONVERTIRPDF
 ```
 
